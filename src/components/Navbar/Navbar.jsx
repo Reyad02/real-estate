@@ -22,7 +22,7 @@ const Navbar = () => {
 
     }
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 md:mt-4">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,7 +44,7 @@ const Navbar = () => {
                     {
                         user ?
                             <>
-                                <div className="w-10 ">
+                                <div className="w-10 tooltip" data-tip={user.email}>
                                     {
                                         user.photoURL === null ?
                                             <img className="rounded-full" alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />

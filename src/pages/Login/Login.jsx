@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvide";
 import { Link } from "react-router-dom";
+import swal from 'sweetalert';
 
 const Login = () => {
     const { loginUser } = useContext(AuthContext);
@@ -18,6 +19,8 @@ const Login = () => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorMessage);
+                swal(errorMessage, "error");
+
             });
     }
     return (
