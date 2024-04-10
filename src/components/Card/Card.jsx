@@ -1,4 +1,5 @@
 import { SlLocationPin } from "react-icons/sl";
+import { Link } from "react-router-dom";
 
 const Card = ({ eachCard }) => {
     const { image, id, estate_title, segment_name, price, location, Status, Area, description } = eachCard;
@@ -21,7 +22,9 @@ const Card = ({ eachCard }) => {
                         <SlLocationPin />
                         <p>{location}</p>
                     </div>
-                    <button className="btn btn-primary btn-sm">Buy Now</button>
+                    <Link to={`/estate/${id}`}>
+                        <button className="btn btn-primary btn-sm">Buy Now</button>
+                    </Link>
                 </div>
             </div>
         </div>

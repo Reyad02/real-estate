@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvide";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
 
 const Login = () => {
     const { loginUser } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -14,6 +16,7 @@ const Login = () => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user);
+                navigate(location?.state ? location.state : "/");
             })
             .catch((error) => {
                 const errorCode = error.code;
