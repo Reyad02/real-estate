@@ -59,7 +59,7 @@ const Login = () => {
             });
     }
     return (
-        <div className='flex justify-center mt-24'>
+        <div className='flex justify-center md:mt-6 lg:mt-24'>
             <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-4">
                 <form className="card-body" onSubmit={handleLogin}>
                     <div className="form-control">

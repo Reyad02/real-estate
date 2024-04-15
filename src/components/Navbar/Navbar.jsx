@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvide";
+import logo from "../../assets/logo.jpg"
 
 const Navbar = () => {
     const { user, logOutUser } = useContext(AuthContext);
@@ -32,7 +33,11 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                {/* <Link className="" to="/">
+                    <div>
+                        <img src={logo} alt="" className="max-w-16 rounded-full" />
+                    </div>
+                </Link> */}
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-8">
@@ -50,9 +55,6 @@ const Navbar = () => {
                                             <img className="rounded-full" alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                                             :
                                             <img className="rounded-full" src={user.photoURL} />
-                                        // <img src={`${user.photoURL}`}></img>
-                                        // ||  
-                                        // <img className="rounded-full" alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                                     }
                                 </div>
                                 <button className="btn" onClick={handleLogout}>Logout</button>
