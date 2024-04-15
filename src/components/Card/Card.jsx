@@ -15,7 +15,7 @@ const Card = ({ eachCard }) => {
                     </div>
                     <h2 className="text-lg font-bold text-blue-500">{price}</h2>
                 </div>
-                <p className="border-b-2 pb-2">{description}</p>
+                <p className="border-b-2 pb-2">{description.length > 100 ? description.slice(0, 100)+"...":description }</p>
 
                 <div className="card-actions items-center justify-between mt-2">
                     <div className="flex items-center gap-1">
