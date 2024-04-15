@@ -78,16 +78,13 @@ const Login = () => {
                         <button className="btn btn-primary">Login</button>
                     </div>
                 </form>
-                <div>
-                    <div className="flex justify-center gap-4">
-                        <button onClick={handleGoogleSignin} className="btn btn-circle btn-outline">
-                            <FaGoogle />
-                        </button>
-                        <button onClick={handleGithubSignin} className="btn btn-circle btn-outline">
-                            <FaGithub />
-                        </button>
-                    </div>
-
+                <div className="flex justify-center gap-4">
+                    <button onClick={handleGoogleSignin} className="btn btn-circle btn-outline">
+                        <FaGoogle />
+                    </button>
+                    <button onClick={handleGithubSignin} className="btn btn-circle btn-outline">
+                        <FaGithub />
+                    </button>
                 </div>
                 <p className="text-center">If you don't have any account then please <Link className="text-blue-400" to="/register">Register</Link> first</p>
             </div>

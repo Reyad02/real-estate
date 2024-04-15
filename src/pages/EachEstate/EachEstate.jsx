@@ -37,7 +37,7 @@ const EachEstate = () => {
     } = currentState;
 
     return (
-        <div className="hero min-h-fit bg-base-200 mt-4 p-4 rounded-xl">
+        <div className="hero min-h-fit bg-base-200 mt-4 p-4 rounded-xl max-w-7xl mx-auto">
             <div className="hero-content flex-col lg:flex-row-reverse p-0">
                 <div className="text-center lg:text-left flex-1 space-y-1">
                     <h1 className="text-4xl font-bold mb-1">{estate_title}</h1>
