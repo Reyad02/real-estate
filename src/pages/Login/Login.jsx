@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvide";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
+import { FaGoogle, FaGithub } from "react-icons/fa";
+
 
 const Login = () => {
-    const { loginUser } = useContext(AuthContext);
+    const { loginUser, googleLogin, githubLogin } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -23,6 +25,36 @@ const Login = () => {
                 const errorMessage = error.message;
                 console.log(errorMessage);
                 swal(errorMessage, "error");
+
+            });
+    }
+
+    const handleGoogleSignin = () => {
+        googleLogin()
+            .then((result) => {
+                const googleUser = result.user;
+                console.log(googleUser);
+                navigate(location?.state ? location.state : "/");
+
+            }).catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorMessage);
+
+            });
+    }
+
+    const handleGithubSignin = () => {
+        githubLogin()
+            .then((result) => {
+                const googleUser = result.user;
+                console.log(googleUser);
+                navigate(location?.state ? location.state : "/");
+
+            }).catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorMessage);
 
             });
     }
@@ -46,7 +78,18 @@ const Login = () => {
                         <button className="btn btn-primary">Login</button>
                     </div>
                 </form>
-                <p className="text-center">If you don't have any account then please <Link className="text-blue-400" to= "/register">Register</Link> first</p>
+                <div>
+                    <div className="flex justify-center gap-4">
+                        <button onClick={handleGoogleSignin} className="btn btn-circle btn-outline">
+                            <FaGoogle />
+                        </button>
+                        <button onClick={handleGithubSignin} className="btn btn-circle btn-outline">
+                            <FaGithub />
+                        </button>
+                    </div>
+
+                </div>
+                <p className="text-center">If you don't have any account then please <Link className="text-blue-400" to="/register">Register</Link> first</p>
             </div>
         </div>
     );

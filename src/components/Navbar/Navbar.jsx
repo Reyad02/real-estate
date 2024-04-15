@@ -43,20 +43,20 @@ const Navbar = () => {
                 <div className="menu menu-horizontal px-1 gap-8">
                     {
                         user ?
-                            <>
-                                <div className="w-10 tooltip" data-tip={user.email}>
+                            <div className="flex items-center gap-4">
+                                <div className="w-10 tooltip cursor-pointer" data-tip={user.displayName || user.email}>
                                     {
                                         user.photoURL === null ?
                                             <img className="rounded-full" alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                                             :
-                                            <img src={user.photoURL} />
+                                            <img className="rounded-full" src={user.photoURL} />
                                         // <img src={`${user.photoURL}`}></img>
                                         // ||  
                                         // <img className="rounded-full" alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                                     }
                                 </div>
                                 <button className="btn" onClick={handleLogout}>Logout</button>
-                            </>
+                            </div>
                             : <button className="btn"><Link to="/login">Login</Link></button>
                     }
                 </div>
