@@ -6,6 +6,7 @@ import Register from "../pages/Register/Register";
 import EachEstate from "../pages/EachEstate/EachEstate";
 import PrivateRoute from "./PrivateRoute";
 import Error from "../pages/Error/Error";
+import Cart from "../pages/Cart/Cart";
 
 const router = createBrowserRouter([
     {
@@ -29,7 +30,12 @@ const router = createBrowserRouter([
           path: "/estate/:id",
           element: <PrivateRoute><EachEstate></EachEstate></PrivateRoute>,
           loader: ()=> fetch('/Estate.json')
-        }
+        },
+        {
+          path: "/cart",
+          element: <PrivateRoute><Cart></Cart></PrivateRoute>,
+          loader: ()=> fetch('/Estate.json')
+        },
       ]
     },
   ]);

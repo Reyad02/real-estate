@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet-async";
 import Cards from "../../components/Cards/Cards";
 import SwiperSlider from "../../components/Swiper/SwiperSlider";
 
 const Home = () => {
     return (
         <div>
+            <Helmet>
+                <title>Home</title>
+            </Helmet>
             <SwiperSlider></SwiperSlider>
             <div className="max-w-7xl mx-auto">
                 <div className=" my-8 text-center">

@@ -1,19 +1,8 @@
-import { useParams, useLoaderData } from 'react-router-dom';
-import { MdOutlineBedroomChild, MdOutlineBathroom } from "react-icons/md";
+import { MdOutlineBathroom, MdOutlineBedroomChild } from "react-icons/md";
 import { RiParkingBoxLine } from "react-icons/ri";
-import { setEstateLocalStorage } from '../../Utility/localStorage';
 
-
-
-const EachEstate = () => {
-    let { id } = useParams();
-    // console.log(typeof id);
-    const parseId = parseInt(id);
-    // console.log(parseId);
-    let Estates = useLoaderData();
-    // console.log(Estates);
-    const currentState = Estates.find(eachEstate => eachEstate.id === parseId);
-    // console.log(currentState);
+const EachCart = ({ estate }) => {
+    console.log(estate);
     const {
         estate_title,
         segment_name,
@@ -35,12 +24,7 @@ const EachEstate = () => {
         apartment_types,
         sleeps,
         available_dates
-    } = currentState;
-
-    const setInLocalStorage = () => {
-        setEstateLocalStorage(parseId);
-        console.log("set IN LOCAL STORAGE DONE");
-    }
+    } = estate;
 
     return (
         <div className="hero min-h-fit bg-base-200 mt-4 p-4 rounded-xl max-w-7xl mx-auto">
@@ -97,7 +81,6 @@ const EachEstate = () => {
 
 
                     <h2 className='text-2xl font-bold'>{price}</h2>
-                    <button onClick={setInLocalStorage} className='btn btn-primary'>Add to cart</button>
                 </div>
                 <div className="card flex-1  shadow-2xl bg-base-100 ">
                     <img src={image} className='rounded-lg' alt="" />
@@ -107,4 +90,4 @@ const EachEstate = () => {
     );
 };
 
-export default EachEstate;
+export default EachCart;

@@ -3,6 +3,7 @@ import { AuthContext } from "../../Provider/AuthProvide";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -59,36 +60,41 @@ const Login = () => {
             });
     }
     return (
-        <div className='flex justify-center md:mt-6 lg:mt-24'>
-            <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-4">
-                <form className="card-body" onSubmit={handleLogin}>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Email</span>
-                        </label>
-                        <input type="email" placeholder="Email" name="email" className="input input-bordered" required />
+        <>
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
+            <div className='flex justify-center md:mt-6 lg:mt-24'>
+                <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-4">
+                    <form className="card-body" onSubmit={handleLogin}>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input type="email" placeholder="Email" name="email" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Password</span>
+                            </label>
+                            <input type="password" placeholder="Password" name="pass" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control mt-6">
+                            <button className="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                    <div className="flex justify-center gap-4">
+                        <button onClick={handleGoogleSignin} className="btn btn-circle btn-outline">
+                            <FaGoogle />
+                        </button>
+                        <button onClick={handleGithubSignin} className="btn btn-circle btn-outline">
+                            <FaGithub />
+                        </button>
                     </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Password</span>
-                        </label>
-                        <input type="password" placeholder="Password" name="pass" className="input input-bordered" required />
-                    </div>
-                    <div className="form-control mt-6">
-                        <button className="btn btn-primary">Login</button>
-                    </div>
-                </form>
-                <div className="flex justify-center gap-4">
-                    <button onClick={handleGoogleSignin} className="btn btn-circle btn-outline">
-                        <FaGoogle />
-                    </button>
-                    <button onClick={handleGithubSignin} className="btn btn-circle btn-outline">
-                        <FaGithub />
-                    </button>
+                    <p className="text-center">If you don't have any account then please <Link className="text-blue-400" to="/register">Register</Link> first</p>
                 </div>
-                <p className="text-center">If you don't have any account then please <Link className="text-blue-400" to="/register">Register</Link> first</p>
             </div>
-        </div>
+        </>
     );
 };
 

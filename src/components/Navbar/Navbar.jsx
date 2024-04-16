@@ -9,8 +9,13 @@ const Navbar = () => {
     const links =
         <>
             <li><NavLink to="/" >Home</NavLink></li>
-            <li><NavLink to="/update-profile" >Update Profile</NavLink></li>
-            <li><NavLink to="/user-profile" >User Profile</NavLink></li>
+            {
+                user && <>
+                    <li><NavLink to="/update-profile" >Update Profile</NavLink></li>
+                    <li><NavLink to="/user-profile" >User Profile</NavLink></li>
+                    <li><NavLink to="/cart" >Cart</NavLink></li>
+                </>
+            }
         </>
 
     const handleLogout = () => {
@@ -33,11 +38,11 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                {/* <Link className="" to="/">
+                <Link className="" to="/">
                     <div>
                         <img src={logo} alt="" className="max-w-16 rounded-full" />
                     </div>
-                </Link> */}
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-8">

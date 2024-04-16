@@ -2,7 +2,7 @@ import { SlLocationPin } from "react-icons/sl";
 import { Link } from "react-router-dom";
 
 const Card = ({ eachCard }) => {
-    const { image, id, estate_title, segment_name, price, location, Status, Area, description } = eachCard;
+    const { image, id, estate_title, segment_name, price, location, Status, Area, description, ViewProperty } = eachCard;
 
     return (
         <div className="card card-compact  bg-base-100 shadow-xl">
@@ -23,7 +23,7 @@ const Card = ({ eachCard }) => {
                         <p>{location}</p>
                     </div>
                     <Link to={`/estate/${id}`}>
-                        <button className="btn btn-primary btn-sm">Buy Now</button>
+                        <button className="btn btn-primary btn-sm">Property Details</button>
                     </Link>
                 </div>
             </div>
