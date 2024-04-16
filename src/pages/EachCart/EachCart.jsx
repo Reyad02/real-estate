@@ -27,9 +27,9 @@ const EachCart = ({ estate }) => {
     } = estate;
 
     return (
-        <div className="hero min-h-fit bg-base-200 mt-4 p-4 rounded-xl max-w-7xl mx-auto">
-            <div className="hero-content flex-col lg:flex-row-reverse p-0">
-                <div className="text-center lg:text-left flex-1 space-y-1">
+        <div data-aos="fade-right" className="hero min-h-fit bg-base-200 mt-4 p-4 rounded-xl max-w-7xl mx-auto">
+            <div className="hero-content flex-col-reverse lg:flex-row-reverse p-0">
+                <div className="text-left flex-1 space-y-1">
                     <h1 className="text-4xl font-bold mb-1">{estate_title}</h1>
                     {
                         segment_name && <div className="badge badge-primary mt-2">{segment_name}</div>
@@ -44,7 +44,7 @@ const EachCart = ({ estate }) => {
 
                         </span>)}
                     </p>
-                    <div className='flex gap-4'>
+                    <div className='flex flex-col items-start md:flex-row lg:gap-4'>
                         <p>
                             {
                                 (bedrooms && <span className='flex items-center gap-1'><MdOutlineBedroomChild />

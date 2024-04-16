@@ -15,8 +15,11 @@
         "bathrooms": 3,
         "year_built": 2018,
         "parking_spaces": 2,
-        "open_house_dates": ["2024-05-01", "2024-05-15"]
-
+        "open_house_dates": ["2024-05-01", "2024-05-15"],
+        "coordinates": {
+            "latitude": 40.7128,
+            "longitude": -74.0060
+        }
     },
     {
         "id": 2,
@@ -33,7 +36,11 @@
         "bathrooms": 2.5,
         "year_built": 2020,
         "parking_spaces": 1,
-        "open_house_dates": ["2024-04-20", "2024-05-10"]
+        "open_house_dates": ["2024-04-20", "2024-05-10"],
+        "coordinates": {
+            "latitude": 40.7128,
+            "longitude": -74.0060
+        }
     },
     {
         "id": 3,
@@ -51,7 +58,11 @@
         "bathrooms": 2,
         "year_built": 2019,
         "parking_spaces": 1,
-        "amenities": ["24/7 security", "concierge service"]
+        "amenities": ["24/7 security", "concierge service"],
+        "coordinates": {
+            "latitude": 40.7128,
+            "longitude": -74.0060
+        }
     },
     {
         "id": 4,
@@ -69,7 +80,11 @@
         "bathrooms": 1,
         "year_built": 2021,
         "parking_spaces": "Shared parking",
-        "utilities_included": ["Water", "Electricity"]
+        "utilities_included": ["Water", "Electricity"],
+        "coordinates": {
+            "latitude": 40.7128,
+            "longitude": -74.0060
+        }
     },
     {
         "id": 5,
@@ -84,7 +99,11 @@
         "image": "https://i.ibb.co/m64PsKJ/bench-blog.jpg",
         "ViewProperty": "View Property Details",
         "apartment_types": ["Studio", "1-bedroom", "2-bedroom"],
-        "amenities": ["Healthcare services", "Fitness center", "Community events"]
+        "amenities": ["Healthcare services", "Fitness center", "Community events"],
+        "coordinates": {
+            "latitude": 40.7128,
+            "longitude": -74.0060
+        }
     },
     {
         "id": 6,
@@ -101,7 +120,11 @@
         "bedrooms": 3,
         "bathrooms": 2,
         "sleeps": 8,
-        "available_dates": ["2024-06-01", "2024-06-15"]
+        "available_dates": ["2024-06-01", "2024-06-15"],
+        "coordinates": {
+            "latitude": 40.7128,
+            "longitude": -74.0060
+        }
     },
     {
         "id": 7,
@@ -119,7 +142,11 @@
         "bathrooms": 2,
         "year_built": 2017,
         "parking_spaces": 1,
-        "amenities": ["Community center", "Walking trails"]
+        "amenities": ["Community center", "Walking trails"],
+        "coordinates": {
+            "latitude": 40.7128,
+            "longitude": -74.0060
+        }
     },
     {
         "id": 8,
@@ -137,7 +164,11 @@
         "bathrooms": 2.5,
         "year_built": 2022,
         "parking_spaces": 2,
-        "utilities_included": ["Water", "Trash"]
+        "utilities_included": ["Water", "Trash"],
+        "coordinates": {
+            "latitude": 40.7128,
+            "longitude": -74.0060
+        }
     },
     {
         "id": 9,
@@ -155,6 +186,10 @@
         "bathrooms": 2,
         "year_built": 2020,
         "parking_spaces": "Underground parking",
-        "amenities": ["Rooftop terrace", "Fitness center"]
+        "amenities": ["Rooftop terrace", "Fitness center"],
+        "coordinates": {
+            "latitude": 40.7128,
+            "longitude": -74.0060
+        }
     }
 ]

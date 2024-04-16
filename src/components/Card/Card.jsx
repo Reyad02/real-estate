@@ -5,7 +5,7 @@ const Card = ({ eachCard }) => {
     const { image, id, estate_title, segment_name, price, location, Status, Area, description, ViewProperty } = eachCard;
 
     return (
-        <div className="card card-compact  bg-base-100 shadow-xl">
+        <div data-aos="fade-right" className="card card-compact  bg-base-100 shadow-xl">
             <figure className=""><img src={image} className="h-[300px] object-fill	w-full" alt="Single-family homes" /></figure>
             <div className="card-body flex-grow">
                 <div className="flex items-center justify-between">

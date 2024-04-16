@@ -21,7 +21,7 @@ const SwiperSlider = () => {
         className="mySwiper h-[85vh]"
       >
         <SwiperSlide>
-          <div className="hero h-[100vh] lg:h-[85vh] " style={{ backgroundImage: 'url(https://i.ibb.co/Wcqd5Wm/Slider1.jpg)' }}>
+          <div className="hero h-[100vh] lg:h-[85vh]" style={{ backgroundImage: 'url(https://i.ibb.co/Wcqd5Wm/Slider1.jpg)' }}>
             <div className="hero-overlay bg-opacity-45 "></div>
             <div className="hero-content text-center text-neutral-content ">
               <div className="max-w-md">
@@ -37,7 +37,7 @@ const SwiperSlider = () => {
             <div className="hero-overlay bg-opacity-60 "></div>
             <div className="hero-content text-center text-neutral-content ">
               <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold">Experience Culinary Excellence at Home</h1>
+                <h1 className="mb-5 text-5xl font-bold pt-8">Experience Culinary Excellence at Home</h1>
                 <p className="mb-5">Discover kitchens that inspire creativity and make everyday cooking a pleasure.</p>
                 {/* <button className="btn btn-primary">Get Started</button> */}
               </div>

@@ -27,7 +27,12 @@ const Login = () => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorMessage);
-                swal(errorMessage, "error");
+                swal({
+                    title: "Wrong email or password",
+                    // text: "Already in the cart",
+                    icon: "warning",
+                    dangerMode: true,
+                });
 
             });
     }
