@@ -7,37 +7,42 @@ import EachEstate from "../pages/EachEstate/EachEstate";
 import PrivateRoute from "./PrivateRoute";
 import Error from "../pages/Error/Error";
 import Cart from "../pages/Cart/Cart";
+import UserProfile from "../pages/UserProfile/UserProfile";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Root></Root>,
-      errorElement: <Error></Error>,
-      children: [
-        {
-            path: "/",
-            element: <Home></Home>
-        },
-        {
-            path: "/login",
-            element: <Login></Login>
-        },
-        {
-            path: "/register",
-            element: <Register></Register>
-        },
-        {
-          path: "/estate/:id",
-          element: <PrivateRoute><EachEstate></EachEstate></PrivateRoute>,
-          loader: ()=> fetch('/Estate.json')
-        },
-        {
-          path: "/cart",
-          element: <PrivateRoute><Cart></Cart></PrivateRoute>,
-          loader: ()=> fetch('/Estate.json')
-        },
-      ]
-    },
-  ]);
+  {
+    path: "/",
+    element: <Root></Root>,
+    errorElement: <Error></Error>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>
+      },
+      {
+        path: "/login",
+        element: <Login></Login>
+      },
+      {
+        path: "/register",
+        element: <Register></Register>
+      },
+      {
+        path: "/estate/:id",
+        element: <PrivateRoute><EachEstate></EachEstate></PrivateRoute>,
+        loader: () => fetch('/Estate.json')
+      },
+      {
+        path: "/cart",
+        element: <PrivateRoute><Cart></Cart></PrivateRoute>,
+        loader: () => fetch('/Estate.json')
+      },
+      {
+        path: "/user-profile",
+        element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
+      },
+    ]
+  },
+]);
 
 export default router;
