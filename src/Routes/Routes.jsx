@@ -8,6 +8,7 @@ import PrivateRoute from "./PrivateRoute";
 import Error from "../pages/Error/Error";
 import Cart from "../pages/Cart/Cart";
 import UserProfile from "../pages/UserProfile/UserProfile";
+import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/user-profile",
         element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
+      },
+      {
+        path: "/update-profile",
+        element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
       },
     ]
   },

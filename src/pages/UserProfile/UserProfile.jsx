@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvide";
 import dateFormat, { masks } from "dateformat";
+import { Helmet } from "react-helmet-async";
 
 
 const UserProfile = () => {
@@ -8,6 +9,9 @@ const UserProfile = () => {
     console.log(user);
     return (
         <div className="flex flex-col items-center ">
+            <Helmet>
+                <title>User Profile</title>
+            </Helmet>
             <img className="rounded-full w-32 h-32" src={ user.photoURL||"https://thumbs.dreamstime.com/b/businessman-icon-vector-male-avatar-profile-image-profile-businessman-icon-vector-male-avatar-profile-image-182095609.jpg" }/>
             <h1>Name: {user?.displayName}</h1>
             <h1>Email: {user?.email}</h1>
