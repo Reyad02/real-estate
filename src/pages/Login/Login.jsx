@@ -1,15 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvide";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
-
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
     const { loginUser, googleLogin, githubLogin } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
+
+    const [hide, setHide] = useState(true);
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -59,12 +61,16 @@ const Login = () => {
 
             });
     }
+
+    const showHidePass = () => {
+        setHide(!hide);
+    }
     return (
         <>
             <Helmet>
                 <title>Login</title>
             </Helmet>
-            <div className='flex justify-center md:mt-6 lg:mt-24'>
+            <div className='flex justify-center md:mt-6 lg:mt-24 '>
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-4">
                     <form className="card-body" onSubmit={handleLogin}>
                         <div className="form-control">
@@ -77,7 +83,12 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="Password" name="pass" className="input input-bordered" required />
+                            <input type={hide ? "password" : "text"} placeholder="Password" name="pass" className="input input-bordered" required />
+                            <div className=" absolute top-48 right-4 w-16 cursor-pointer" onClick={showHidePass}>
+                                {
+                                    (hide && <FaEye className=""></FaEye>) || <FaEyeSlash></FaEyeSlash>
+                                }
+                            </div>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
