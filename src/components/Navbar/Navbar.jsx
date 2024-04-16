@@ -9,13 +9,10 @@ const Navbar = () => {
     const links =
         <>
             <li><NavLink to="/" >Home</NavLink></li>
-            {
-                user && <>
-                    <li><NavLink to="/update-profile" >Update Profile</NavLink></li>
-                    <li><NavLink to="/user-profile" >User Profile</NavLink></li>
-                    <li><NavLink to="/cart" >Cart</NavLink></li>
-                </>
-            }
+            <li><NavLink to="/update-profile" >Update Profile</NavLink></li>
+            <li><NavLink to="/user-profile" >User Profile</NavLink></li>
+            <li><NavLink to="/cart" >Cart</NavLink></li>
+
         </>
 
     const handleLogout = () => {
@@ -57,7 +54,7 @@ const Navbar = () => {
                                 <div className="w-10 tooltip cursor-pointer" data-tip={user.displayName || user.email}>
                                     {
                                         user.photoURL === null ?
-                                            <img className="rounded-full" alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                            <img className="rounded-full" alt="Tailwind CSS Navbar component" src="https://thumbs.dreamstime.com/b/businessman-icon-vector-male-avatar-profile-image-profile-businessman-icon-vector-male-avatar-profile-image-182095609.jpg" />
                                             :
                                             <img className="rounded-full" src={user.photoURL} />
                                     }

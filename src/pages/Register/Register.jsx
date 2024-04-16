@@ -1,23 +1,52 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvide";
 import { Helmet } from "react-helmet-async";
+import swal from "sweetalert";
+
 
 const Register = () => {
     const { registerUser } = useContext(AuthContext);
+
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const pass = e.target.pass.value;
+        const displayName = e.target.name.value;
+        const photo = e.target.image.value;
+        const passVerification = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+        if (!passVerification.test(pass)) {
+            return swal({
+                title: "Use a strong password",
+                // text: "Already in the cart",
+                icon: "warning",
+                dangerMode: true,
+            });
+        }
         registerUser(email, pass)
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user);
+                swal({
+                    title: "Registered Successfully",
+                    // text: "Already in the cart",
+                    icon: "success",
+                    dangerMode: false,
+                });
+                navigate(location?.state ? location.state : "/");
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                swal({
+                    title: errorMessage,
+                    // text: "Already in the cart",
+                    icon: "warning",
+                    dangerMode: true,
+                });
                 console.log(errorMessage);
             });
     }
@@ -31,9 +60,21 @@ const Register = () => {
                     <form className="card-body" onSubmit={handleRegister}>
                         <div className="form-control">
                             <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input type="text" placeholder="Name" name="name" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
                             <input type="email" placeholder="Email" name="email" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Photo</span>
+                            </label>
+                            <input type="text" placeholder="Photo URL" name="image" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
