@@ -1,5 +1,6 @@
 import { MdOutlineBathroom, MdOutlineBedroomChild } from "react-icons/md";
 import { RiParkingBoxLine } from "react-icons/ri";
+import PropTypes from 'prop-types';
 
 const EachCart = ({ estate }) => {
     console.log(estate);
@@ -89,5 +90,9 @@ const EachCart = ({ estate }) => {
         </div>
     );
 };
+
+EachCart.propTypes = {
+    estate: PropTypes.object
+}
 
 export default EachCart;

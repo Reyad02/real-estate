@@ -21,7 +21,6 @@ const Register = () => {
         if (!passVerification.test(pass)) {
             return swal({
                 title: "Use a strong password",
-                // text: "Already in the cart",
                 icon: "warning",
                 dangerMode: true,
             });
@@ -32,7 +31,6 @@ const Register = () => {
                 console.log(user);
                 swal({
                     title: "Registered Successfully",
-                    // text: "Already in the cart",
                     icon: "success",
                     dangerMode: false,
                 });
@@ -43,7 +41,6 @@ const Register = () => {
                 const errorMessage = error.message;
                 swal({
                     title: errorMessage,
-                    // text: "Already in the cart",
                     icon: "warning",
                     dangerMode: true,
                 });
@@ -55,7 +52,7 @@ const Register = () => {
             <Helmet>
                 <title>Registration</title>
             </Helmet>
-            <div className='flex justify-center mt-24'>
+            <div className='flex justify-center mt-8'>
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-4">
                     <form className="card-body" onSubmit={handleRegister}>
                         <div className="form-control">

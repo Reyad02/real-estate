@@ -20,3 +20,11 @@
     height: 100%;
     object-fit: cover;
   }
+
+  .swiper-button-prev, .swiper-button-next {
+    color: #08184B;
+  }
+
+  .swiper-pagination-fraction{
+    display: none;
+  }

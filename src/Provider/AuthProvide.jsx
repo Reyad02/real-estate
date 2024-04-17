@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup, GithubAuthProvider, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
+import PropTypes from 'prop-types';
 
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
@@ -68,5 +69,9 @@ const AuthProvide = ({ children }) => {
 
     );
 };
+
+AuthProvide.propTypes = {
+    children: PropTypes.node
+}
 
 export default AuthProvide;

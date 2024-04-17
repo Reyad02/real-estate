@@ -8,7 +8,7 @@ const UserProfile = () => {
     const { user} = useContext(AuthContext);
     console.log(user);
     return (
-        <div className="flex flex-col items-center ">
+        <div className="flex flex-col items-center mt-8 px-2">
             <Helmet>
                 <title>User Profile</title>
             </Helmet>

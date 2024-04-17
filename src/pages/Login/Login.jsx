@@ -21,6 +21,11 @@ const Login = () => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user);
+                swal({
+                    title: "Successfully Logged in",
+                    icon: "success",
+                    dangerMode: false,
+                });
                 navigate(location?.state ? location.state : "/");
             })
             .catch((error) => {
@@ -29,7 +34,6 @@ const Login = () => {
                 console.log(errorMessage);
                 swal({
                     title: "Wrong email or password",
-                    // text: "Already in the cart",
                     icon: "warning",
                     dangerMode: true,
                 });
@@ -75,7 +79,7 @@ const Login = () => {
             <Helmet>
                 <title>Login</title>
             </Helmet>
-            <div className='flex justify-center md:mt-6 lg:mt-24 '>
+            <div className='flex justify-center mt-8 '>
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-4">
                     <form className="card-body" onSubmit={handleLogin}>
                         <div className="form-control">
